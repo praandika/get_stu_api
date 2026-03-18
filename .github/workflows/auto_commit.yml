@@ -1,0 +1,25 @@
+name: Auto Commit Keep Alive
+
+on:
+  schedule:
+    - cron: '0 1 * * 0'
+  workflow_dispatch:
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Update timestamp
+        run: |
+          echo "Last update: $(date)" > alive.txt
+
+      - name: Commit changes
+        run: |
+          git config --global user.name "Andika Pranayoga"
+          git config --global user.email "praandikayoga@gmail.com"
+          git add alive.txt
+          git commit -m "keep alive" || echo "No changes"
+          git push
