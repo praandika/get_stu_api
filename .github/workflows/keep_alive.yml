@@ -1,0 +1,14 @@
+name: Keep Repo Alive
+
+on:
+  schedule:
+    - cron: '0 0 * * 0'  # tiap minggu (Minggu)
+  workflow_dispatch:
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Keep alive ping
+        run: echo "Repo still active - $(date)"
