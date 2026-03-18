@@ -78,7 +78,7 @@ if len(all_rows) > 0:
     # rapihin nama kolom
     df.columns = df.columns.str.replace('h.', '', regex=False)
 
-    file_path = f"C:\\Automation\\STU\\Data_Dpack_AllDealer_{payload['targetDate']}.xlsx"
+    file_path = f"C:\\STU\\Data_Dpack_AllDealer_{payload['targetDate']}.xlsx"
     df.to_excel(file_path, index=False)
 
     print(f"✅ Selesai! File: {file_path}")
