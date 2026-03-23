@@ -25,5 +25,5 @@ jobs:
       - name: Run script
         run: |
           echo "=== START ==="
-          python script.py
+          python get_stu_api.py
           echo "=== END ==="
